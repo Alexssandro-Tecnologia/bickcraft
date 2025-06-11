@@ -16,10 +16,20 @@
   border-radius: 4px;
   font: 600 1.125rem/1.35 "Poppins", sans-serif;
   text-transform: uppercase;
+  max-width: max-content; /* fala para o elemento que ele não pode expandir além do tamanho do conteúdo. */
 }
 
 .botao:hover {
   background: linear-gradient(#ffb60d, #e59317);
+}
+
+.botao.secundario {
+  background: var(--cor-10);
+  color: var(--cor-2);
+} /* Quando coloco duas classes juntas sem separação por vírgula no css é porque as duas estão sendo declaradas na classe dentro do html. */
+
+.botao.secundario:hover {
+  background: var(--cor-9);
 }
 
 @media (max-width: 600px) {
