@@ -1,0 +1,106 @@
+.bicicletas-bg {
+  background: linear-gradient(to right, var(--cor-0) 30%, var(--cor-11) 0%);
+}
+
+.bicicletas {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+.bicicletas-imagem {
+  display: grid;
+} /* Aqui, eu tenho uma "div" com imagem e "span" dentro. Vou definir como "display: grid" essa "div" aqui. Vai ser "display: grid". A partir do momento que eu coloco o "display: grid", ele já tenta expandir 100% para ocupar totalmente. */
+
+.bicicletas-imagem img {
+  grid-area: 1/1;
+} /* Eu posso falar que a imagem também vai ficar ali. Então, eu falo que imagem, "img", vai ficar também na "grid-area: 1/1". Agora, eu tenho o meu "span" e a minha imagem no mesmo local. */
+
+.bicicletas-imagem span {
+  grid-area: 1/1;
+  place-self: start end;
+  margin-top: 20px;
+  background: var(--cor-12);
+  display: inline-block;
+  padding: 8px 16px 8px 8px;
+  border-radius: 4px 0 0 4px;
+} /* E esse elemento aqui, "grid", está tentando também ocupar a altura desse elemento aqui. Eu quero que o meu "span" fique na primeira linha e primeira coluna. Então, vou colocar ele aqui. "grid-area", que eu posso utilizar. "grid-area". Eu falo que vai ser na "1/1". Então, ele vai estar na primeira linha e primeira coluna. Colocou aqui, primeira linha e primeira coluna. Por padrão, a div, o elemento, tenta ocupar, inteiro, todo o meu espaço. Por isso, ele está expandindo e colocando todo o preto aqui. Mas eu posso posicionar ele especificamente onde eu quiser. Eu posso falar que ele vai ser "place-self". Vou usar já aqui o "place-self" direto. Ele vai estar no "start end". Então, olha isso. "start" é no começo, aqui, no topo, e "end" seria no final. E, agora, eu posso colocar uma "margin-top" para ele. Parece um pouco mais complexo... Na verdade, é. Tem mais código aqui do que com o posicionamento absoluto. Mas isso, também, vai te dar mais variedades depois, se você precisar. Eu vou colocar uma "margin-top: 20px". Eu já tenho, agora, ele posicionado corretamente como eu queria. */
+
+.bicicletas-conteudo {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  align-content: start;
+}
+
+.bicicletas h2,
+.bicicletas p {
+  grid-column: 1/-1;
+}
+
+.bicicletas h2 {
+  margin-bottom: 20px;
+}
+
+.bicicletas h2::before {
+  content: "";
+  display: block;
+  width: 12px;
+  height: 8px;
+  background-color: var(--cor-p1);
+  margin-bottom: 8px;
+}
+
+.bicicletas p {
+  margin-bottom: 32px;
+}
+
+.bicicletas a {
+  place-self: end;
+} /* place-self alinha o conteúdo. Seja no início (start), centro (center) ou final (end) */
+
+.bicicletas ul {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+.bicicletas li {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.bicicletas-conteudo img {
+  width: 24px;
+}
+
+.bicicletas li + li {
+  margin-top: 16px;
+}
+
+@media (max-width: 800px) {
+  .bicicletas-bg {
+    background: var(--cor-11);
+  }
+  .bicicletas {
+    grid-template-columns: 1fr;
+    gap: 20px;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+}
+
+@media (max-width: 600px) {
+  .bicicletas-conteudo {
+    grid-template-columns: 1fr;
+  }
+  .bicicletas ul {
+    font-size: 1rem;
+    grid-template-columns: 1fr 1fr;
+    margin-bottom: 32px;
+  }
+  .bicicletas a {
+    place-self: start;
+  }
+}
