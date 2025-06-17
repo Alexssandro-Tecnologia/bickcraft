@@ -1,0 +1,37 @@
+.vantagens-bg {
+  background-color: var(--cor-12);
+}
+
+.vantagens {
+  padding-top: 120px;
+  padding-bottom: 120px;
+}
+
+.vantagens ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, max-content));
+  gap: 40px 80px;
+} /* Eu uso o repeat. E eu falo que ele vai ter um auto-fit. Ele vai tentar colocar o valor que der, a quantidade de colunas que der. E eu vou definir que essas colunas, vão ter no mínimo e máximo. Mínimo de 300px. Eu não quero que diminua menos, vou até colocar um valor um pouco mais seguro, 280px. Eu vou querer que ela tenha no máximo, o máximo do conteúdo que pode ter, que seria max-content. Olha o que acontece agora. Vou diminuindo, quando ele chega no momento que não cabe mais, 280px para cada uma das colunas, ele quebra. E agora ele quebrou para duas, apenas. Ele vai indo, vai indo, vai chegar em momento que ele não vai conseguir, e vai quebrar de novo. Ele cria um layout responsivo, sem a gente ter que ficar mudando de media query, em media query. */
+
+.vantagens h2 {
+  margin-bottom: 60px;
+}
+
+.vantagens h3,
+.vantagens img {
+  margin-bottom: 8px;
+}
+
+@media (max-width: 800px) {
+  .vantagens {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  .vantagens ul {
+    gap: 20px;
+  }
+
+  .vantagens h2 {
+    margin-bottom: 40px;
+  }
+}
