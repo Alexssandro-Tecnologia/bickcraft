@@ -1,0 +1,121 @@
+.bicicleta {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: start;
+  gap: 40px;
+  padding-top: 60px;
+  padding-bottom: 60px;
+}
+
+#bicicleta .titulo p {
+  text-transform: uppercase;
+}
+
+.bicicleta-imagens {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.bicicleta-imagens img {
+  flex: 1;
+  min-width: 200px;
+} /* Agora vou falar com cada imagem, img especificamente, e vou definir elas como flex 1. E se eu deixar só assim, ele sempre vai tentar colocar a imagem
+no maior tamanho possível. Porque essa imagem consegue crescer sempre. Eu tenho que informar para a imagem, que ela pode ter um valor mínimo de width. Então, coloco min-width de 200px. Se der para diminuir em até 200px, ela vai tentar. Porque eu defini um mínimo width para ela, está vendo? Então, agora ela diminui.*/
+
+.bicicleta-imagens img:first-child {
+  min-width: 100%;
+} /* Ele vai tentando encaixar os primeiros itens na primeira linha, depois ele vai aumentando o que não couber. Isso é o flex box. Para isso, eu posso informar que o primeiro item, então img first-child, ele vai ter sempre min width de 100%. Ele vai ter sempre 100%. O primeiro está com 100%, e os demais
+que eu for colocando, vão crescer. */
+
+.bicicleta-conteudo > p {
+  margin-bottom: 32px;
+}
+
+.bicicleta-comprar {
+  display: grid;
+  grid-template-columns: max-content auto;
+  align-items: center;
+  justify-items: start;
+  gap: 8px 12px;
+  margin-bottom: 40px;
+}
+
+.bicicleta-comprar a {
+  grid-row: span 2; /* para ocupar as duas linhas do grid */
+}
+
+.bicicleta-comprar span {
+  display: flex;
+  align-items: center;
+  background-color: var(--cor-12);
+  gap: 8px;
+  padding: 4px 8px;
+  border-radius: 4px;
+}
+
+.bicicleta-conteudo h2 {
+  text-transform: uppercase;
+  letter-spacing: 0.015rem;
+  margin-bottom: 12px;
+}
+
+.bicicleta-informacoes,
+.bicicleta-ficha {
+  padding: 32px;
+  background-color: var(--cor-12);
+  border-radius: 4px;
+}
+
+.bicicleta-informacoes {
+  margin-bottom: 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 40px;
+}
+
+.bicicleta-informacoes img {
+  width: 24px;
+  margin-bottom: 8px;
+}
+
+.bicicleta-informacoes h3 {
+  margin-bottom: 8px;
+}
+
+.bicicleta-ficha li {
+  padding: 4px 0px;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid var(--cor-11);
+}
+
+.bicicleta-ficha li:last-child {
+  border-bottom: none;
+}
+
+.bicicleta-ficha span {
+  color: var(--cor-6);
+}
+
+@media (max-width: 800px) {
+  .bicicleta {
+    grid-template-columns: 1fr;
+    padding-top: 40px;
+    padding-bottom: 40px;
+  }
+
+  .bicicleta-imagens {
+    grid-row: 2;
+  }
+}
+
+@media (max-width: 400px) {
+  .bicicleta-informacoes {
+    grid-template-columns: 1fr;
+  }
+
+  .bicicleta-comprar {
+    grid-template-columns: 1fr;
+  }
+}
