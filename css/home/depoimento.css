@@ -3,7 +3,7 @@
   grid-template-columns: 1fr 1fr;
   background-color: var(--cor-p1);
   overflow: hidden;
-} /* Eu venho no depoimento geral e falo que ele vai ter um overflow hidden. Então, qualquer vez que ele for estourar o container, ele vai esconder. */
+}
 
 .depoimento img {
   width: 100%;
@@ -15,33 +15,40 @@
 .depoimento-conteudo {
   padding: 40px 40px 80px 80px;
   align-self: end;
+  background: url("../../img/dec/bottom-right-p.svg") no-repeat bottom 40px
+    right 40px;
 }
 
 .depoimento-conteudo p {
-  max-width: 22ch;
-  font-family: "Merriweather", sans-serif;
+  max-width: 32ch;
+  font-family: "Merriweather", serif;
   font-style: italic;
   font-weight: 900;
   margin-bottom: 32px;
   position: relative;
 }
 
-.depoimento-conteudo p:before,
-.depoimento-conteudo p:after {
+.depoimento p::before,
+.depoimento p::after {
   font-size: 5rem;
   color: var(--cor-p2);
   position: absolute;
 }
 
-.depoimento-conteudo p::before {
+.depoimento p::before {
   content: "“";
   left: -50px;
   top: -20px;
 }
 
-.depoimento-conteudo p:after {
+.depoimento p::after {
   content: "”";
-  bottom: -70px;
+}
+
+@media (min-width: 1200px) {
+  .depoimento img {
+    max-height: 520px;
+  }
 }
 
 @media (max-width: 800px) {
@@ -49,13 +56,11 @@
     grid-template-columns: 1fr;
     text-align: center;
   }
-
   .depoimento img {
     max-height: 200px;
   }
-
   .depoimento-conteudo {
     padding: 40px 20px;
-    justify-self: center;
-  } /* Isso aqui é um conteúdo de grid, por padrão ele fica ao início, ao start. Vou colocar justify-self center, agora ele está ao centro. */
+    margin: auto;
+  }
 }
